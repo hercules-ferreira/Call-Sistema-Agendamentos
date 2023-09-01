@@ -12,6 +12,9 @@ export const Container = styled.main`
   padding: 3rem;
 
 
+.multiStep{
+  margin: 1rem 0 0;
+}
 `
 
 export const FullPageCentered = styled.div`
@@ -99,7 +102,7 @@ export const Form = styled.form`
   }
 
   p {
-    margin: 1.5rem 0 0.5rem;
+    /* margin: 1.5rem 0 0.5rem; */
   }
 `
 

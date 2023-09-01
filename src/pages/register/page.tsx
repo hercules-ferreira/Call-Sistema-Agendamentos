@@ -43,7 +43,11 @@ export default function Register() {
           Precisamos de algumas informações para criar seu perfil! Ah, você pode
           ditar essas informações depois.
         </p>
+        <div className="multiStep">
+
         <MultiStep size={4} currentStep={1} />
+        </div>
+
       </Header>
       <Form onSubmit={handleSubmit(handleRegister)}>
         <label>

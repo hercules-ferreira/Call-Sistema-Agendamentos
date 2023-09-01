@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
- 
   input {
     color: #ffff;
     display: flex;
@@ -21,7 +20,6 @@ export const Container = styled.div`
   }
 
   button {
-
     display: flex;
     padding: 12px;
     margin-top: 0.5rem;
@@ -29,7 +27,7 @@ export const Container = styled.div`
     align-items: center;
     gap: 8px;
     align-self: stretch;
-    border-radius: 10px;
+    border-radius: 6px;
     color: var(--with);
     background: var(--ignite700);
 
@@ -37,9 +35,6 @@ export const Container = styled.div`
       border: transparent;
       background: #00875f;
     }
-
-
-  
   }
 
   .buttonIcon {
@@ -48,13 +43,9 @@ export const Container = styled.div`
     justify-content: center;
     color: inherit;
     text-decoration: none;
-
-
   }
 
   form {
-
-
     display: flex;
     width: 390px;
     padding: 12px 20px;
@@ -65,10 +56,6 @@ export const Container = styled.div`
     border-radius: 6px;
     border: 1px solid var(--gray600);
     background: var(--gray800);
-
-
-
-
 
     @media (max-width: 460px) {
       div {
@@ -93,8 +80,6 @@ export const Container = styled.div`
     border-radius: 6px;
     background: var(--gray900);
     border-bottom: 1px solid #ffff;
-
-
   }
 
   .prefix {
@@ -115,9 +100,10 @@ export const Container = styled.div`
 export const FormAnnotation = styled.div`
   margin-top: 2rem;
   color: red;
-  font-size: 1.1rem;
+  font-size: 1rem;
   letter-spacing: 1px;
   margin-top: 0.8rem;
+  text-align: center;
 
   span {
     color: var(--gray400);
