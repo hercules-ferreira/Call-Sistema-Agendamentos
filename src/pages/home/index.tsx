@@ -15,12 +15,17 @@ export default function Home() {
               agendamentos no seu tempo livre.
             </p>
             <ClaimUserNameForm />
-
           </div>
         </Hero>
 
         <Preview>
-          <Image src={previewImage} height={400} quality={100} priority alt="Calendário" />
+          <Image
+            src={previewImage}
+            height={400}
+            quality={100}
+            priority
+            alt="Calendário"
+          />
         </Preview>
       </Container>
     </div>

@@ -3,18 +3,16 @@ import styled from 'styled-components'
 export const Container = styled.main`
   max-width: 36rem;
   display: flex;
-  flex-direction: column; /* Para centralizar verticalmente */
-  align-items: center; /* Centralizar horizontalmente */
-  justify-content: center; /* Centralizar verticalmente */
-  /* min-height: 100vh;  */
-   background: var(--gray800); 
-
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray800);
+  border-radius: 10px;
   padding: 3rem;
 
-
-.multiStep{
-  margin: 1rem 0 0;
-}
+  .multiStep {
+    margin: 1rem 0 0;
+  }
 `
 
 export const FullPageCentered = styled.div`
@@ -23,13 +21,25 @@ export const FullPageCentered = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-`;
+`
 
 export const Header = styled.div`
   padding: 0 1.5rem;
   margin-bottom: 1.5rem;
+
+  h2 {
+    padding: 0 0 1rem;
+    text-align: center;
+  }
+  > p {
+    text-align: center;
+  }
 `
 export const Form = styled.form`
+  p {
+    padding: 1rem 0 0.5rem;
+  }
+
   width: 100%; /* Set input width to 100% */
 
   input {
@@ -100,14 +110,9 @@ export const Form = styled.form`
     align-items: center;
     justify-content: center;
   }
-
-  p {
-    /* margin: 1.5rem 0 0.5rem; */
-  }
 `
 
 export const FormAnnotation = styled.div`
-  /* margin-top: 2rem; */
   color: red;
   font-size: 1rem;
   letter-spacing: 1px;

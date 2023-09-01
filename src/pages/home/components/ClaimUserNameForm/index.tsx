@@ -5,6 +5,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Link } from 'react-router-dom'
 import { Icons } from '@/src/components/Icons'
+import { useRouter } from 'next/router'
 
 const claimUsernameFormSchema = z.object({
   username: z
@@ -22,34 +23,32 @@ export function ClaimUserNameForm() {
   const {
     register,
     handleSubmit: handleSubmitForm, // Renomeie o handleSubmit para evitar conflitos de nomes
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<ClaimUsernameFormData>({
     resolver: zodResolver(claimUsernameFormSchema),
   })
 
-  async function handleClaimUsername(data: ClaimUsernameFormData){
-    console.log(data)
+  const router = useRouter()
+
+  async function handleClaimUsername(data: ClaimUsernameFormData) {
+    const { username } = data
+
+    await router.push(`/register?username=${username}`)
   }
 
   return (
     <Container>
       {/* Use uma função intermediária para lidar com o evento onSubmit */}
-      <form onSubmit={handleSubmitForm(handleClaimUsername)} >
+      <form onSubmit={handleSubmitForm(handleClaimUsername)}>
         <div className="input-container">
           <span className="prefix">hercules.com/</span>
-          <input
-            placeholder="seu-usuário"
-            {...register('username')}
-   
-          
-          />
+          <input placeholder="seu-usuário" {...register('username')} />
         </div>
-   
-          <button type="submit">
-            Reservar
-            <Icons svg="arrowRight" />
-          </button>
-     
+
+        <button type="submit" disabled={isSubmitting}>
+          Reservar
+          <Icons svg="arrowRight" />
+        </button>
       </form>
       <FormAnnotation>
         {errors.username ? (
