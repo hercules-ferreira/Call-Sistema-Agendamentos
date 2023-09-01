@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { Container, FormAnnotation } from './styles'
 import { z } from 'zod'
@@ -22,7 +22,7 @@ type ClaimUsernameFormData = z.infer<typeof claimUsernameFormSchema>
 export function ClaimUserNameForm() {
   const {
     register,
-    handleSubmit: handleSubmitForm, // Renomeie o handleSubmit para evitar conflitos de nomes
+    handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<ClaimUsernameFormData>({
     resolver: zodResolver(claimUsernameFormSchema),
@@ -39,7 +39,7 @@ export function ClaimUserNameForm() {
   return (
     <Container>
       {/* Use uma função intermediária para lidar com o evento onSubmit */}
-      <form onSubmit={handleSubmitForm(handleClaimUsername)}>
+      <form onSubmit={handleSubmit(handleClaimUsername)}>
         <div className="input-container">
           <span className="prefix">hercules.com/</span>
           <input placeholder="seu-usuário" {...register('username')} />
