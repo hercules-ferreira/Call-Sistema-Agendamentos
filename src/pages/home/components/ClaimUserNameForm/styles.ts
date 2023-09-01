@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+ 
   input {
     color: #ffff;
     display: flex;
@@ -20,6 +21,7 @@ export const Container = styled.div`
   }
 
   button {
+
     display: flex;
     padding: 12px;
     margin-top: 0.5rem;
@@ -35,6 +37,9 @@ export const Container = styled.div`
       border: transparent;
       background: #00875f;
     }
+
+
+  
   }
 
   .buttonIcon {
@@ -43,9 +48,13 @@ export const Container = styled.div`
     justify-content: center;
     color: inherit;
     text-decoration: none;
+
+
   }
 
   form {
+
+
     display: flex;
     width: 390px;
     padding: 12px 20px;
@@ -56,6 +65,10 @@ export const Container = styled.div`
     border-radius: 6px;
     border: 1px solid var(--gray600);
     background: var(--gray800);
+
+
+
+
 
     @media (max-width: 460px) {
       div {
@@ -80,6 +93,8 @@ export const Container = styled.div`
     border-radius: 6px;
     background: var(--gray900);
     border-bottom: 1px solid #ffff;
+
+
   }
 
   .prefix {
