@@ -3,6 +3,7 @@ import { Icons } from '@/src/components/Icons'
 import { useRouter } from 'next/router'
 import { FullPageCentered, Header } from '../styles'
 import { ConnectBox, ConnectItem, ContainerConnect } from './styles'
+import { signIn } from 'next-auth/react'
 
 export default function ConnectCalendar() {
   const router = useRouter()
@@ -29,7 +30,12 @@ export default function ConnectCalendar() {
         <ConnectBox>
           <ConnectItem>
             <h2>Google Calendar</h2>
-            <button className="buttonIcon">
+            <button
+              className="buttonIcon"
+              onClick={() => {
+                signIn('google')
+              }}
+            >
               Conectar <Icons svg="arrowRight" />
             </button>
           </ConnectItem>
